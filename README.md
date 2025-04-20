@@ -40,11 +40,13 @@ code .env
 BLOCKVISION_API_KEY=AddAPIkey
 
   ```
+
 ### Build the project
 
 ```shell
 npm run build
 ```
+
 start file
 
 ```bash
