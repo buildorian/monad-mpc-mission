@@ -79,7 +79,8 @@ Add details about the MCP server and save the file.
 
 Here's the final result
 
-<img width="694" alt="image" src="https://github.com/user-attachments/assets/1eebe1e8-c65b-4014-9dda-c7fd8a51e5f9" />
+<img width="692" alt="image" src="https://github.com/user-attachments/assets/55a51210-4a03-4907-b826-3383b323e168" />
+
 
 
 ## Further Resources
