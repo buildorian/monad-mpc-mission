@@ -34,6 +34,12 @@ npm install dotenv
 ```bash
 code .env
 ```
+- env file should have this var
+  ```bash
+  PRIVATE_KEY=0xprivatekey
+BLOCKVISION_API_KEY=AddAPIkey
+
+  ```
 ### Build the project
 
 ```shell
