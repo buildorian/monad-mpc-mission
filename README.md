@@ -20,6 +20,7 @@ In this tutorial, we're creating an MCP server that allows MCP Client (Claude De
 
 ```shell
 git clone https://github.com/buildorian/monad-mpc-mission.git
+cd monad-mpc-mission
 ```
 
 2. Install dependencies:
@@ -59,12 +60,13 @@ Add details about the MCP server and save the file.
 
 ```json
 {
-  "mcpServers": {
-    ...
+  {
+"mcpServers": {
     "monad-mcp": {
-      "command": "node",
+      "command": "wsl",
       "args": [
-        "/<path-to-project>/build/index.js"
+        "/path/to/node",
+        "/path/to/dist/index.js"
       ]
     }
   }
@@ -77,7 +79,8 @@ Add details about the MCP server and save the file.
 
 Here's the final result
 
-![final result](/static/final_result.gif)
+<img width="694" alt="image" src="https://github.com/user-attachments/assets/1eebe1e8-c65b-4014-9dda-c7fd8a51e5f9" />
+
 
 ## Further Resources
 
