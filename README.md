@@ -19,7 +19,7 @@ In this tutorial, we're creating an MCP server that allows MCP Client (Claude De
 1. Clone this repository
 
 ```shell
-git clone https://github.com/monad-developers/monad-mcp-tutorial.git
+https://github.com/buildorian/monad-mpc-mission.git
 ```
 
 2. Install dependencies:
@@ -32,99 +32,6 @@ npm i --save-dev @types/node
 ## Building the MCP server
 
 Monad Testnet related configuration is already added to `index.ts` in the `src` folder.
-
-### Define the server instance
-
-```ts
-// Create a new MCP server instance
-const server = new McpServer({
-  name: "monad-testnet",
-  version: "0.0.1",
-  // Array of supported tool names that clients can call
-  capabilities: ["get-mon-balance"]
-});
-```
-
-### Defining the MON balance tool
-
-Below is the scaffold of the `get-mon-balance` tool:
-
-```ts
-server.tool(
-    // Tool ID 
-    "get-mon-balance",
-    // Description of what the tool does
-    "Get MON balance for an address on Monad testnet",
-    // Input schema
-    {
-        address: z.string().describe("Monad testnet address to check balance for"),
-    },
-    // Tool implementation
-    async ({ address }) => {
-        // code to check MON balance
-    }
-);
-```
-
-Let's add the MON balance check implementation to the tool:
-
-```ts
-server.tool(
-    // Tool ID 
-    "get-mon-balance",
-    // Description of what the tool does
-    "Get MON balance for an address on Monad testnet",
-    // Input schema
-    {
-        address: z.string().describe("Monad testnet address to check balance for"),
-    },
-    // Tool implementation
-    async ({ address }) => {
-        try {
-            // Check MON balance for the input address
-            const balance = await publicClient.getBalance({
-                address: address as `0x${string}`,
-            });
-
-            // Return a human friendly message indicating the balance.
-            return {
-                content: [
-                    {
-                        type: "text",
-                        text: `Balance for ${address}: ${formatUnits(balance, 18)} MON`,
-                    },
-                ],
-            };
-        } catch (error) {
-            // If the balance check process fails, return a graceful message back to the MCP client indicating a failure.
-            return {
-                content: [
-                    {
-                        type: "text",
-                        text: `Failed to retrieve balance for address: ${address}. Error: ${
-                        error instanceof Error ? error.message : String(error)
-                        }`,
-                    },
-                ],
-            };
-        }
-    }
-);
-```
-
-### Initialize the transport and server from the `main` function
-
-```ts
-async function main() {
-    // Create a transport layer using standard input/output
-    const transport = new StdioServerTransport();
-    
-    // Connect the server to the transport
-    await server.connect(transport);
-    
-    console.error("Monad testnet MCP Server running on stdio");
-}
-```
 
 ### Build the project
 
