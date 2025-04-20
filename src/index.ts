@@ -7,9 +7,9 @@ import { monadTestnet } from "viem/chains"; // Import monadTestnet
 
 // Load environment variables (e.g., for private key)
 import dotenv from "dotenv";
-// dotenv.config();
 
-const envPath = "/home/kida/monadMpcTask/.env";
+// change .env pathto the correct path of the file in your project directory
+const envPath = "/path/to/env/file/.env";
 console.error(`[DEBUG] Loading .env file from: ${envPath}`);
 dotenv.config({ path: envPath });
 
@@ -21,7 +21,6 @@ if (!privateKey) {
 }
 
 
-const account = privateKeyToAccount(privateKey as `0x${string}`);
 
 // Initialize public client for read-only interactions with Monad Testnet
 console.error("[DEBUG] Initializing Public Client for Monad Testnet");
