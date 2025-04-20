@@ -26,6 +26,7 @@ git clone https://github.com/monad-developers/monad-mcp-tutorial.git
 
 ```
 npm install
+npm i --save-dev @types/node
 ```
 
 ## Building the MCP server
