@@ -27,12 +27,13 @@ git clone https://github.com/buildorian/monad-mpc-mission.git
 ```
 npm install
 npm i --save-dev @types/node
+npm install dotenv
 ```
 
-## Building the MCP server
-
-Monad Testnet related configuration is already added to `index.ts` in the `src` folder.
-
+## Add env to your root directory and edit src/index.ts with the path to .env fie
+```bash
+code .env
+```
 ### Build the project
 
 ```shell
@@ -43,21 +44,7 @@ The server is now ready to use!
 
 ### Adding the MCP server to Claude Desktop
 
-1. Open "Claude Desktop"
-
-![claude desktop](/static/1.png)
-
-2. Open Settings
-
-Claude > Settings > Developer
-
-![claude settings](/static/claude_settings.gif)
-
-3. Open `claude_desktop_config.json` 
-
-![claude config](/static/config.gif)
-
-4. Add details about the MCP server and save the file.
+Add details about the MCP server and save the file.
 
 ```json
 {
