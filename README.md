@@ -45,7 +45,11 @@ BLOCKVISION_API_KEY=AddAPIkey
 ```shell
 npm run build
 ```
+start file
 
+```bash
+node dist/index.js
+```
 The server is now ready to use!
 
 ### Adding the MCP server to Claude Desktop
