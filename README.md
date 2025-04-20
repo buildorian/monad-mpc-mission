@@ -19,7 +19,7 @@ In this tutorial, we're creating an MCP server that allows MCP Client (Claude De
 1. Clone this repository
 
 ```shell
-https://github.com/buildorian/monad-mpc-mission.git
+git clone https://github.com/buildorian/monad-mpc-mission.git
 ```
 
 2. Install dependencies:
